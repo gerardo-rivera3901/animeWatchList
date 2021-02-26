@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { HeaderForm } from '../styling/componentStyling';
+import { HeaderForm, StyledCard } from '../styling/componentStyling';
 
 const initialValues = {
   animeName: ''
@@ -34,23 +34,25 @@ export const AnimeGrabber = () => {
     <>
       <HeaderForm onSubmit={onSubmit}>
         <h1>Anime Watch List</h1>
-        <input 
-          name='animeName'
-          type='text'
-          placeholder='Search for an Anime'
-          value={animeSearch.animeName}
-          onChange={onChange}
-        />
-        <button>Search</button>
+        <div>
+          <input 
+            name='animeName'
+            type='text'
+            placeholder='Search for an Anime'
+            value={animeSearch.animeName}
+            onChange={onChange}
+          />
+          <button id='search'>Search</button>
+        </div>
       </HeaderForm>
       {animeList.map(item => {
         return (
-          <div key={item.mal_id}>
+          <StyledCard key={item.mal_id}>
             <h2>{item.title}</h2>
-            <p>{item.synopsis} <a href={item.url}>Read more</a></p>
+            <p>{item.synopsis} <a href={item.url} target="_blank" rel="noreferrer">Read more</a></p>
 
             <img src={item.image_url} alt={`${item.title} Anime Banner`}/>
-          </div>
+          </StyledCard>
         )
       })}
     </>

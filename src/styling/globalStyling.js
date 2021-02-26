@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+  * {
+    font-family: Nunito, sans-serif;
+    /* border: solid black 1px; */
+  }
   body {
     margin: 0;
     padding: 0;
