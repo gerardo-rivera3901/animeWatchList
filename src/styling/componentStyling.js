@@ -8,14 +8,14 @@ export const HeaderForm = styled.form`
   top: 0;
   padding: 1% 2%;
   background: #32746D;
-  position: fixed;
+  /* position: fixed; */
   h1 {
     color: #fff;
     width: 50%;
   }
-  /* div {
+  div {
     display: flex;
-  } */
+  }
   input {
     padding: 0.25rem 0.5rem;
   }
